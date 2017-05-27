@@ -2541,6 +2541,9 @@ public class GearyController : Geary.BaseObject {
     }
 
     private void on_sent(Geary.RFC822.Message rfc822) {
+        string message = _("Successfully sent mail to %s.".printf(rfc822.to.to_short_string()));
+        InAppNotification notification = new InAppNotification(message);
+        this.main_window.add_notification(notification);
         Libnotify.play_sound("message-sent-email");
     }
 

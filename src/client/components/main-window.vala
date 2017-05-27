@@ -49,6 +49,8 @@ public class MainWindow : Gtk.ApplicationWindow {
     private Gtk.Box conversation_box;
     [GtkChild]
     private Gtk.ScrolledWindow conversation_list_scrolled;
+    [GtkChild]
+    private Gtk.Overlay overlay;
 
 
     /** Fired when the shift key is pressed or released. */
@@ -137,6 +139,11 @@ public class MainWindow : Gtk.ApplicationWindow {
                 height > 0 && height <= screen.get_height())
                 this.window_height = height;
         }
+    }
+
+    public void add_notification(InAppNotification notification) {
+        this.overlay.add_overlay(notification);
+        notification.show();
     }
 
     private void set_styling() {

@@ -124,5 +124,25 @@ public class Geary.RFC822.MailboxAddresses : Geary.MessageData.AbstractMessageDa
     public override string to_string() {
         return MailboxAddress.list_to_string(addrs, "(no addresses)", (a) => a.to_string());
     }
+
+    /**
+     * Returns a human-readable short string.
+     * Useful in case there are a lot of recipients, or there is little room for the display.
+     */
+    public string to_short_string() {
+        if (this.size == 0)
+            return _("(No recipients)");
+
+        // Always mention the first recipient
+        string first_recipient = this.get(0).get_short_address();
+        if (this.size == 1)
+            return first_recipient;
+
+        // If more than one, add the amount of participants
+        if (this.size == 2)
+            return _("%s and 1 other recipient").printf(first_recipient);
+
+        return _("%s and %d others").printf(first_recipient, this.size - 1);
+    }
 }
 

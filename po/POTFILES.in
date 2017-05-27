@@ -69,6 +69,7 @@ src/client/folder-list/folder-list-inboxes-branch.vala
 src/client/folder-list/folder-list-search-branch.vala
 src/client/folder-list/folder-list-special-grouping.vala
 src/client/folder-list/folder-list-tree.vala
+src/client/notification/in-app-notification.vala
 src/client/notification/libmessagingmenu.vala
 src/client/notification/libnotify.vala
 src/client/notification/new-messages-indicator.vala
@@ -404,6 +405,7 @@ src/mailer/main.vala
 [type: gettext/glade]ui/folder-popover.ui
 [type: gettext/glade]ui/gtk/help-overlay.ui
 [type: gettext/glade]ui/gtk/menus.ui
+[type: gettext/glade]ui/in-app-notification.ui
 [type: gettext/glade]ui/login.glade
 [type: gettext/glade]ui/main-toolbar.ui
 [type: gettext/glade]ui/main-toolbar-menus.ui
