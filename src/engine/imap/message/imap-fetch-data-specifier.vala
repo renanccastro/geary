@@ -34,43 +34,43 @@ public enum Geary.Imap.FetchDataSpecifier {
     public string to_string() {
         switch (this) {
             case UID:
-                return "uid";
+                return "UID";
             
             case FLAGS:
-                return "flags";
+                return "FLAGS";
             
             case INTERNALDATE:
-                return "internaldate";
+                return "INTERNALDATE";
             
             case ENVELOPE:
-                return "envelope";
+                return "ENVELOPE";
             
             case BODYSTRUCTURE:
-                return "bodystructure";
+                return "BODYSTRUCTURE";
             
             case BODY:
-                return "body";
+                return "BODY";
             
             case RFC822:
-                return "rfc822";
+                return "RFC822";
             
             case RFC822_HEADER:
-                return "rfc822.header";
+                return "RFC822.HEADER";
             
             case RFC822_SIZE:
-                return "rfc822.size";
+                return "RFC822.SIZE";
             
             case RFC822_TEXT:
-                return "rfc822.text";
+                return "RFC822.TEXT";
             
             case FAST:
-                return "fast";
+                return "FAST";
             
             case ALL:
-                return "all";
+                return "ALL";
             
             case FULL:
-                return "full";
+                return "FULL";
             
             default:
                 assert_not_reached();
