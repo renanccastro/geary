@@ -5,7 +5,7 @@
  */
 
 /*
- * A representation of IMAP's UIDVALIDITY.
+ * An IMAP unique identifier validity (UIDVALIDITY) value.
  *
  * See [[tools.ietf.org/html/rfc3501#section-2.3.1.1]]
  *
@@ -13,15 +13,20 @@
  */
 
 public class Geary.Imap.UIDValidity : Geary.MessageData.Int64MessageData, Geary.Imap.MessageData {
+
     /**
      * Minimum valid value for a {@link UIDValidity}.
+     *
+     * RFC 3501 defines UIDVALIDITY values as "nz-number", hence the
+     * minimum value here hshould be should be 1, however at least one
+     * server is sending 0. See Bug 789271.
      */
-    public const int64 MIN = 1;
-    
+    public const int64 MIN = 0;
+
     /**
      * Maximum valid value for a {@link UIDValidity}.
      *
-     * This is currently larger than what the spec allows for, since
+     * This is currently larger than what RFC 3501 allows for, since
      * at least one mail server was returning values greater than an
      * unsigned 32-bit integer. See Bug 755424.
      */
